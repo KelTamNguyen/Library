@@ -1,0 +1,22 @@
+:root {
+  --primary-clr-dark-black: #0d0d0d;
+  --container-clr: #1f1f1f;
+  /* --secondary-clr-dark-gray: #383838; */
+  --accent-clr: #ed2553;
+}
+
+body {
+  background-color: var(--primary-clr-dark-black);
+  margin: 0;
+  padding: 0;
+}
+
+.add-book-btn {
+  color: #fff; 
+  background-color: var(--accent-clr);
+  font-size: 1.5rem;
+  height: 80px;
+  width: 175px;
+  border: none;
+  border-radius: 15px;
+}
