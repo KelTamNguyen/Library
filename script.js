@@ -9,25 +9,24 @@ function removeFromLibrary(id) {
   
 }
 
-// BOOK CODE
-function Book(title, author, pageCount, id, hasRead) {
-  if (!new.target) {
-    throw Error("You must use the 'new' operator to call the constructor");
-  }
-  this.title = title;
-  this.author = author;
-  this.pageCount = pageCount;
-  this.id = id;
-  this.hasRead = hasRead;
-}
-
-Book.prototype.toggleHasRead = function() {
-  this.hasRead = !this.hasRead;
-}
-
 function addBookToLibrary(title, author, pageCount, hasRead) {
   let uuid = crypto.randomUUID();
   LIBRARY.push(new Book(title, author, pageCount, uuid, hasRead));
+}
+
+// BOOK CODE
+class Book {
+  constructor(title, author, pageCount, id, hasRead) {
+    this.title = title;
+    this.author = author,
+    this.pageCount = pageCount;
+    this.id = id;
+    this.hasRead = hasRead;
+  }
+
+  toggleHasRead() {
+    this.hasRead = !this.hasRead;
+  }
 }
 
 // DOM MANIPULATION
@@ -126,11 +125,11 @@ function statusColor(item, button) {
   button.className = '';
   if (item.hasRead) {
     button.classList.add('read');
-    button.innerText = 'Read'
+    button.innerText = 'Read';
   } 
   else {
     button.classList.add('not-read');
-    button.innerText = 'Not Read'
+    button.innerText = 'Not Read';
   }
 }
 
